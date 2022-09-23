@@ -1,17 +1,19 @@
 //GabrielRC0 La Salle 
-#include <stdio.h>  
-#include <math.h>  
-#include <stdlib.h>  
-  
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 int main()  
 {  
-    // declaration of local variable op;  
-    int op, n1, n2;  
-    float res;  
+    // Declarar as variadas operações;  
+    int op, n1, n2; 
+    int base, exp;
+    long long int value=1;
+    float res;
+    long double result = 1.0;
     char ch;  
     do  
     {  
-        // displays the multiple operations of the C Calculator  
+        // Demonstra para o usuario a parte de escolha  
         printf (" Select an operation to perform the calculation in C Calculator: ");  
         printf (" \n 1 Addition  \t \t 2 Subtraction \n 3 Multiplication \t 4 Division \n 5 Square \t \t 6 Square Root \n 7 Exit \n \n Please, Make a choice ");      
           
@@ -71,13 +73,16 @@ int main()
             break; // break the function  
               
         case 5:  
-            // getting square of a number  
-            printf (" You chose: Square");  
-            printf ("\n Enter First Number: ");  
-            scanf (" %d", &n1);  
-  
-            res = n1 * n1; // get square of a number  
-            printf (" Square of %d number is: %.2f", n1, res);  
+           printf("Enter a base number: ");
+    scanf("%d", &base);
+    printf("Enter an exponent: ");
+    scanf("%d", &exp);
+
+    while (exp != 0) {
+        result *= base;
+        --exp;
+    }
+    printf("Answer = %.0Lf", result);
             break; // break the function  
               
         case 6:  
